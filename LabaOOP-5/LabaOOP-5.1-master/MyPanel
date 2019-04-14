@@ -1,0 +1,22 @@
+package com.company;
+import java.awt.*;
+import java.io.*;
+import javax.imageio.*;
+import javax.swing.*;
+
+
+public class MyPanel extends JPanel {
+
+    private Image im;
+
+    public MyPanel() {
+        try {
+            im = ImageIO.read(new File("mirea.jpg"));
+        } catch(IOException ex) {}
+    }
+
+    public void paintComponent (Graphics g) {
+        super.paintComponent(g);
+        g.drawImage(im, 0, 0, null);
+    }
+}
